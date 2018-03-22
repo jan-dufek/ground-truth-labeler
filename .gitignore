@@ -6,3 +6,4 @@ CMakeFiles
 compile_commands.json
 Makefile
 GroundTruthLabeler
+.DS_Store
