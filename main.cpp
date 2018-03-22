@@ -4,8 +4,9 @@
  * @date    03/05/2018
  * @version 1.0
  *  
- * This program is used annotate ground truth coordinates of an object
- * of interest in a video.
+ * This application can be used to label the ground truth in a video. The ground
+ * truth can be labeled using a mouse cursor. The position of the cursor in each
+ * video frame is recorded. The data can be used later for training or evaluation.
  *
  */
 
@@ -45,21 +46,8 @@ Settings * settings = new Settings();
 VideoCapture video_capture = VideoCapture(settings->video_capture_source);
 
 ////////////////////////////////////////////////////////////////////////////////
-// Analysis
-////////////////////////////////////////////////////////////////////////////////
-
-// Enables analysis of localization performance. As soon as an object is
-// selected, it will log pixel distance from the mouse cursor. The operator
-// have to keep the cursor in the centroid of EMILY all the time to mark its
-// true position.
-//#define ANALYSIS;
-
-////////////////////////////////////////////////////////////////////////////////
 // Global variables
 ////////////////////////////////////////////////////////////////////////////////
-
-// Object selection
-Rect selection; // TODO remove
 
 // New resized size of video used in processing
 Size resized_video_size;
@@ -82,6 +70,9 @@ int status = 0;
 // Frame number
 long frame_number = -1;
 
+/**
+ * Get the resolution of the input video feed.
+ */
 void get_input_video_size() {
 
     Size input_video_size(video_capture.get(CV_CAP_PROP_FRAME_WIDTH), video_capture.get(CV_CAP_PROP_FRAME_HEIGHT));
@@ -114,6 +105,12 @@ void get_input_video_size() {
     }
 }
 
+/**
+ * Create one log entry with current system status.
+ * 
+ * @param logger
+ * @param current_commands
+ */
 void create_log_entry(Logger* logger) {
 
     // Get current time
@@ -142,10 +139,6 @@ void create_log_entry(Logger* logger) {
     logger->log_general("\n");
 }
 
-/**
- * Track EMILY in video feed.
- * 
- */
 int main(int argc, char** argv) {
 
     ////////////////////////////////////////////////////////////////////////////
@@ -184,7 +177,7 @@ int main(int argc, char** argv) {
     bool first_frame_annotated = false;
     
     ////////////////////////////////////////////////////////////////////////////
-    // Tracking
+    // Labeling
     ////////////////////////////////////////////////////////////////////////////
 
     // Iterate over each frame from the video input and wait between iterations.

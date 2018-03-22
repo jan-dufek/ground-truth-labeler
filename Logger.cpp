@@ -18,14 +18,28 @@ Logger::~Logger() {
     close();
 }
 
+/**
+ * Log string message into general log.
+ * 
+ * @param message
+ */
 void Logger::log_general(string message) {
     general_log_file << message;
 }
 
+/**
+ * Log double value into general log.
+ * 
+ * @param message
+ */
 void Logger::log_general(double message) {
     general_log_file << message;
 }
 
+/**
+ * Close log files.
+ * 
+ */
 void Logger::close() {
     general_log_file.close();
 }

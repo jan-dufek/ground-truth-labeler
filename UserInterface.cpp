@@ -44,7 +44,7 @@ void UserInterface::create_main_window() {
 }
 
 /**
- * Select object of interest in image.
+ * Mouse handler.
  * 
  */
 void UserInterface::onMouse(int event, int x, int y, int flags, void*) {
@@ -125,6 +125,13 @@ void UserInterface::draw_position(int x, int y, double radius, Mat &frame) {
 
 }
 
+/**
+ * Prints current status to the GUI.
+ * 
+ * @param frame
+ * @param status
+ * @param time_to_target
+ */
 void UserInterface::print_status(Mat& frame, int status) {
 
     String stringStatus;
@@ -158,6 +165,11 @@ string UserInterface::int_to_string(int number) {
     return stringStream.str();
 }
 
+/**
+ * Show main window.
+ * 
+ * @param mat
+ */
 void UserInterface::show_main(Mat& mat) {
     imshow(UserInterface::settings->MAIN_WINDOW, mat);
 }
