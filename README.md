@@ -1,58 +1,44 @@
-# emily-tracker
-Track EMILY USV in the video feed from an UAV to get its coordinates and orientation in the image frame.
+# Ground Truth Labeler
+This application can be used to label the ground truth in a video. The ground truth can be labeled using a mouse cursor. The position of the cursor in each video frame is recorded. The data can be used later for training or evaluation.
 
-## Graphical User Interface
+## Installation on macOS
 
-Select EMILY by holding CTRL key and making selectiong using left mouse button.
-
-Select target by left mouse button double click.
-
-Zoom with mouse wheel.
-
-Drag with left mouse button.
-
-Show backprojection mode by pressing b key. Switch back by pressing b again.
-
-Press escape key to exit.
-
-## OpenCV Installation on macOS
-
-1. Install Homebrew
+1. Install Homebrew:
 
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-2. Install OpenCV with ffmpeg support
+2. Install OpenCV with FFmpeg support:
 
     brew tap homebrew/science
 
     brew install opencv3 --with-contrib --with-ffmpeg --with-tbb --with-qt5
 
-3. Link OpenCV
+3. Link OpenCV:
 
     brew link --force --override opencv3
 
-4. Install CMake from cmake.org
+4. Install CMake:
 
-5. Delete the following files from the root directory if they exist (those are system specific files that you will have to generate again on your system):
+    https://cmake.org
 
-    cmake_install.cmake
+5. In terminal, change directory into the root directory of the project and run the following command to generate makefile:
 
-    CMakeCache.txt
+    cmake .
 
-    CMakeFiles
+6. Compile the project:
 
-    EMILYTracker
+    make
 
-    Makefile
+## Manual
 
-6. In terminal, change directory into the root directory of the project and run the following command to generate makefile:
+The graphical user interface has the following functionality:
 
-    cmake CMakeLists.txt
+* Left double click to start or stop recording. When the recording is stopped, the video will pause.
 
-7. Compile the project using C++ compiler.
+* Zoom with mouse wheel or touchpad scroll.
 
-8. Set up network for USB ethernet adapter
+* Drag with left mouse button.
 
-    IP Address: 192.168.1.3
+* Press escape key to exit.
 
-    Subnet Mask: 255.255.255.0
+After the recording is started, hold the cursor over the position you want to record. The position of the cursor in each frame is saved to the log file.
