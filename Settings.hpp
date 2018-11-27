@@ -57,13 +57,13 @@ public:
     ////////////////////////////////////////////////////////////////////////////
 
     // Lake Bryan AI Robotic class field test 2016 03 31
-    //string video_capture_source = "input/2016_03_31_lake_bryan.mp4";
+    string video_capture_source = "input/2016_03_31_lake_bryan.mp4";
 
     // Fort Bend floods 2016 04 26
     //string video_capture_source = "input/2016_04_26_fort_bend.mp4";
 
     // Lake Bryan AI Robotics class final 2016 05 10
-    string video_capture_source = "input/2016_05_10_lake_bryan.mov";
+////    string video_capture_source = "input/2016_05_10_lake_bryan.mov";
 
     // Lab 2016 07 05
     //string video_capture_source = "input/2016_07_05_lab.avi";

@@ -35,7 +35,7 @@
           <buildCommandWorkingDir>.</buildCommandWorkingDir>
           <buildCommand>${MAKE} -f Makefile</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
-          <executablePath>Annotation</executablePath>
+          <executablePath>GroundTruthLabeler</executablePath>
           <ccTool>
             <incDir>
               <pElem>/usr/local/include</pElem>
