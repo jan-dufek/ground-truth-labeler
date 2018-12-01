@@ -55,15 +55,17 @@ public:
     ////////////////////////////////////////////////////////////////////////////////
     // Video files
     ////////////////////////////////////////////////////////////////////////////
-
+  
     // Lake Bryan AI Robotic class field test 2016 03 31
-    string video_capture_source = "input/2016_03_31_lake_bryan.mp4";
+//    string video_capture_source = "input/2016_03_31_lake_bryan.mp4"; // Source video file to annotate
+//    int time_for_annotation = 1000; // Time for annotation specifies how many milliseconds to wait before loading the next frame. This has to be hight enough so that the annotator has enough time to move the cursor to the position to be annotated before the next frame is loaded.
 
     // Fort Bend floods 2016 04 26
-    //string video_capture_source = "input/2016_04_26_fort_bend.mp4";
-
+    string video_capture_source = "input/2016_04_23_fort_bend.mp4";
+    int time_for_annotation = 250; 
+    
     // Lake Bryan AI Robotics class final 2016 05 10
-////    string video_capture_source = "input/2016_05_10_lake_bryan.mov";
+//    string video_capture_source = "input/2016_05_10_lake_bryan.mov";
 
     // Lab 2016 07 05
     //string video_capture_source = "input/2016_07_05_lab.avi";

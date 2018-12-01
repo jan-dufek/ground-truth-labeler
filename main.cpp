@@ -182,7 +182,7 @@ int main(int argc, char** argv) {
 
     // Iterate over each frame from the video input and wait between iterations.
     while (true) {
-
+        
         // If status is initialization or recording, load new frame     
         if (status == 2 || status == 0) {
 
@@ -251,13 +251,9 @@ int main(int argc, char** argv) {
         // Log output
         ////////////////////////////////////////////////////////////////////////
 
-        // Debugging
-        //cout << "Throttle: " << current_commands->get_throttle() << " Rudder: " << current_commands->get_rudder() << endl;
-
-
         // Wait some time before recording cursor position to allow the user
         // to move the cursor to the desired position.
-        if (waitKey(1000) != 27) {
+        if (waitKey(settings->time_for_annotation) != 27) {
             
             // Only log if status is recording and the first frame was annotated
             if (status == 2 && first_frame_annotated) {
